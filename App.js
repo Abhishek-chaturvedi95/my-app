@@ -5,6 +5,7 @@ class App extends React.Component {
         super()
         this.state = {
             count: 0
+            color : ""
         }
         this.increment = this.increment.bind(this)
         this.decrement = this.decrement.bind(this)
@@ -32,7 +33,13 @@ class App extends React.Component {
             }
         })
     }
-    
+    // Add a method which changes color of digit everytime an operation is done, we add a lifecycle method which changes color everytime the state updates
+    componentDidUpdate(prevProps , prevState){
+        if(prevState.count !== this.state.count){
+            const newColor = randomcolor()
+            this.setState(color : newColor)
+        }
+    }
     render() {
         return (
             <div>
